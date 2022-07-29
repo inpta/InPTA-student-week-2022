@@ -15,7 +15,7 @@ Piyush (pmarmat@ph.iitr.ac.in)
 -------------------------------------------------------------------------------------------------------------------------
 
 
-For the tutorials, a LINUX based operating system is required. 
+For the tutorials, a LINUX based operating system is required. Some tutorials will require remote access to InPTA machines, but most will not, the tutorials will be valuable reagrdless
 
 ANACONDA:
 
