@@ -1,0 +1,76 @@
+INSTALLATIONS SOP FOR INPTA STUDENT WEEK 2022
+
+
+
+
+Hi, welcome to the InPTA Student Week 2022. To have all tutorial sessions smoothly, we need to get all the required packages installed and checked successfully beforehand. For that purpose, we have prepared this SOP which will be an installation guide. We will also have a one hour session for doubt clearing regarding installation/any other OS related issues.
+In case of any queries/doubts/issues, please feel free to contact any one of us
+
+InPTA Student Week organizing Committee
+Aman (amnsrv1@gmail.com)
+Neel (kolhe.sci@gmail.com)
+Avinash (avinashkumarpaladi@gmail.com )
+Piyush (pmarmat@ph.iitr.ac.in)
+
+-------------------------------------------------------------------------------------------------------------------------
+
+
+For the tutorials, a LINUX based operating system is required. 
+
+ANACONDA:
+
+Anaconda Distribution is a Python/R data science distribution and a collection of over 7,500+ open-source packages. It will install all important basic packages for the analysis. The installation is quite easy, but it will take 10-20 minutes to install. 
+You can install yourself from instructions on https://docs.anaconda.com/anaconda/install/linux/ , or can follow steps below: 
+
+Step 1) Download the Anaconda package from https://www.anaconda.com/products/distribution#linux 
+The package is of around 650MB and hence try to have a stable internet connection with enough data.
+
+Step 2) After the downloading is done, open terminal and type command
+
+bash ~/Downloads/Anaconda3-2020.05-Linux-x86_64.sh 
+
+# Replace ~/Downloads with your actual path # Replace the .sh file name with the name of the file you downloaded. Accept all the agreements and all. Later the installer prompts you to choose whether to initialize Anaconda Distribution by running conda init. Anaconda recommends entering “yes”.
+
+Step 3) Close and re-open your terminal window for the installation to take effect, or enter the command to refresh the terminal.
+source ~/.bashrc 
+
+
+Step 4) It is suggested to set up an environment and then install all the required pulsar timing related packages. Let us name the environment pulsar
+
+conda create -n pulsar python=3.9.12 
+(note the specific python version, we need this for compatibility, you can create other environments for other needs with the required python version)              
+
+This will create an environment named pulsar. You can also use any name as per your likings.
+You can activate this environment using command
+
+conda activate pulsar
+
+Now you are all set up to install the other packages. They can be directly installed using pip and apt commands. The commands to install required packages that will be needed for analysis are all together mentioned below. If you want to know more about the packages, most of them already have good documentation available online. 
+ONCE AGAIN, DON’T FORGET TO ACTIVATE THE PULSAR ENVIRONMENT BEFORE DOING THESE INSTALLATIONS!
+
+conda install pip
+pip install numpy
+pip install pyephem
+pip install git+https://github.com/dfm/acor.git
+pip install astropy
+pip install jplephem
+pip install Cython
+pip install corner
+pip install nestle
+pip install dynasty
+apt-get install libtool (use sudo if required)
+apt-get install autoconf (use sudo if required)
+apt install libsuitesparse-dev
+pip install scikit-sparse (or conda install -c conda-forge scikit-sparse)
+conda install -c conda-forge tempo2 
+conda install -c conda-forge psrchive
+pip install git+https://github.com/nanograv/PINT.git
+(or: conda install -c conda-forge pint-pulsar)
+pip install git+https://github.com/vallis/libstempo.git
+(or: conda install -c conda-forge libstempo)
+pip install git+https://github.com/nanograv/enterprise.git
+(or: conda install -c conda-forge enterprise-pulsar)
+pip install git+https://github.com/nanograv/enterprise_extensions.git
+(or conda install -c conda-forge enterprise_extensions)
+pip install git+https://github.com/jellis18/PTMCMCSampler
+pip install healpy
