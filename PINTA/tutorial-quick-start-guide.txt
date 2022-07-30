@@ -1,0 +1,93 @@
+Our overall goal is to understand how the following command:
+
+pintav6.2  [--help] [--test] [--no-gptool][--no-rficlean] [--nodel] [--retain-aux][--log-to-file] [--gptdir <...>][--pardir <...>] [--rficconf <...>] [--xnbin <...>] <input_dir> <working_dir>
+
+PINTA is very intuitive and you will learn how to use it in no time!
+
+
+Log into your machine
+
+intial commands before starting to set permissions and to source bashrc
+
+newgrp ugmrtpsr
+umask 0007
+bash                                    (if using tcsh)
+source /Data/bcj/INPTA/PSRSOFT/sourceV6bashrc
+cd <working_directory>
+
+
+copy files to a directory you want to work in, let us keep band 3 and band 5 separate
+
+create a directory <mkdir pinta-test> and subdirectories in pinta-test <mkdir band3> <mkdir band5>
+
+copy test files to these directories (./ indicates current directory, * selects everything)
+<cp /Data/nkolhe/studentweek2022/band5/* ./>
+<cp /Data/nkolhe/studentweek2022/band3/* ./>
+
+
+
+
+
+
+
+Go to home directory
+
+cd $HOME
+
+make sure there is a file called <.psrchive.cfg> in the directory.
+
+note that files with a '.' at the start of the name are hidden, check with <nano .psrchive.cfg>
+
+If you don't have the file, copy it from mine:
+
+cp /home/nkolhe/.psrchive.cfg /$HOME
+
+check for the following settings in the file, if you don't have these, edit accordingly:
+ArrivalTime::default_format = Tempo2
+Dispersion::barycentric_correction = 1
+FrequencyAppend::force_new_predictor = 1
+Predictor::default = tempo2
+WeightedFrequency::round_to_kHz = 0
+
+
+
+#Pulsar Emphemeris (par files)
+
+check this directory (this directory might change, keep an eye out on the latest SOP)
+/Data/bcj/INPTA/InPTA-ParFiles.V6.2/
+
+
+
+pintav6.2  --test [--gptdir <...>] /Data/bcj/INPTA/InPTA-ParFiles.V6.2/ [--rficconf <...>]  <input_dir> <working_dir>
+
+#gptool config files
+
+stuff gptool needs to know
+/Data/bcj/INPTA/gptool_infiles.V6.2/Cycle41/
+
+
+pintav6.2  --test /Data/bcj/INPTA/gptool_infiles.V6.2/Cycle41/ /Data/bcj/INPTA/InPTA-ParFiles.V6.2/ [--rficconf <...>]  <input_dir> <working_dir>
+
+#rficlean config files
+
+studd rficlean needs to know
+/Data/bcj/INPTA/rficlean.flags
+
+pintav6.2  --test --gptdir /Data/bcj/INPTA/gptool_infiles.V6.2/Cycle41/ --pardir /Data/bcj/INPTA/InPTA-ParFiles.V6.2/ --rficconf /Data/bcj/INPTA/rficlean.flags  ./ ./
+
+
+
+#creating pipeline.in
+check observation setup files and create the file with <nano pipeline.in>
+
+for band 3
+# JNAME            RawDataFile          TimeStamp              Frequency         NBins             NChan       BandWidth       SamplingTime      SideBnd            Pol_opt        Integ_Durn        Codedflag
+J1939+2134	J1939+2134.17jul2022.band3cdp.dat	J1939+2134.17jul2022.band3cdp.dat.hdr   500     -1	128     200     0.00000512	LSB     1	10	1
+
+for band5
+# JNAME            RawDataFile          TimeStamp              Frequency         NBins             NChan       BandWidth       SamplingTime      SideBnd            Pol_opt        Integ_Durn        Codedflag
+J1939+2134	J1939+2134_bm4_pa_1460_200_8_18jul2022.raw	J1939+2134_bm4_pa_1460_200_8_18jul2022.raw.hdr  1460    -1	1024    200     0.00004096	LSB     1	10	0
+
+
+
+run pinta in band3 and band5 directories respectively each having their unique pipeline.in files
