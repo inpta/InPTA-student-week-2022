@@ -1,4 +1,4 @@
-#!/home/pratik/anaconda3/envs/pulsar/bin/python3.9
+#!$HOME/anaconda3/envs/pulsar/bin/
 
 import numpy as np
 import psrchive
