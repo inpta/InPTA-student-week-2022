@@ -1,0 +1,2 @@
+Please download the folder named 'std' from the following google drive link (file sizes > 25 MB cannot be uploaded on github), and place it inside your DMCalc_Tutorial folder
+https://drive.google.com/drive/folders/1IBS1-qjFimxZ5jnidy59pA_aW3ewYqse?usp=sharing
