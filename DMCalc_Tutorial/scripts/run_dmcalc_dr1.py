@@ -247,11 +247,11 @@ if __name__ == "__main__":
            
         # Now run dmcalc.
         if b3_arch_file_tmp is not None and b5_arch_file_tmp is not None:
-          dmcalc_cmd = f"dmcalc_dr1.py {b3_arch_file_tmp} {b5_arch_file_tmp} -E {parfile} -M {b3_templfile_select} {b5_templfile_select} -b3n {b3n_sub} -b5n {b5n_sub} "
+          dmcalc_cmd = f"python3.9 ../scripts/dmcalc_dr1.py {b3_arch_file_tmp} {b5_arch_file_tmp} -E {parfile} -M {b3_templfile_select} {b5_templfile_select} -b3n {b3n_sub} -b5n {b5n_sub} "
         elif b5_arch_file_tmp is None:
-          dmcalc_cmd = f"dmcalc_dr1.py {b3_arch_file_tmp} -E {parfile} -M {b3_templfile_select} -nch {b3n_sub} "
+          dmcalc_cmd = f"python3.9 ../scripts/dmcalc_dr1.py {b3_arch_file_tmp} -E {parfile} -M {b3_templfile_select} -nch {b3n_sub} "
         elif b3_arch_file_tmp is None:
-          dmcalc_cmd = f"dmcalc_dr1.py {b5_arch_file_tmp} -E {parfile} -M {b5_templfile_select} -nch {b5n_sub} "
+          dmcalc_cmd = f"python3.9 ../scripts/dmcalc_dr1.py {b5_arch_file_tmp} -E {parfile} -M {b5_templfile_select} -nch {b5n_sub} "
             
         print("[CMD]",dmcalc_cmd)
         os.system(dmcalc_cmd)
