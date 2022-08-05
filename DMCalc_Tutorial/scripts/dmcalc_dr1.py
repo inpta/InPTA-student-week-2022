@@ -1,4 +1,4 @@
-#!/home/pratik/anaconda3/envs/pulsar/bin/python3.9
+#!$HOME/anaconda3/envs/pulsar/bin/
 
 ################### WIDEBAND DM ESTIMATION SCRIPT ###################
 # Script for estimating the DM of an observation using PSRCHIVE and 
