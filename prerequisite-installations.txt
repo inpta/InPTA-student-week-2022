@@ -74,3 +74,9 @@ pip install git+https://github.com/nanograv/enterprise_extensions.git
 (or conda install -c conda-forge enterprise_extensions)
 pip install git+https://github.com/jellis18/PTMCMCSampler
 pip install healpy
+
+addendum by abhimanyu:
+conda create --name pta-gwa python=3.9
+conda activate pta-gwa
+conda install -c conda-forge enterprise-pulsar ptmcmcsampler nestle corner mpi4py
+pip install git+https://github.com/dfm/acor.git@master
