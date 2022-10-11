@@ -57,7 +57,7 @@ pip install jplephem
 pip install Cython
 pip install corner
 pip install nestle
-pip install dynasty
+pip install dynesty
 apt-get install libtool (use sudo if required)
 apt-get install autoconf (use sudo if required)
 apt install libsuitesparse-dev
@@ -74,6 +74,7 @@ pip install git+https://github.com/nanograv/enterprise_extensions.git
 (or conda install -c conda-forge enterprise_extensions)
 pip install git+https://github.com/jellis18/PTMCMCSampler
 pip install healpy
+pip install multiprocess
 
 addendum by abhimanyu:
 conda create --name pta-gwa python=3.9
